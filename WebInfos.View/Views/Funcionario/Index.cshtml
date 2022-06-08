@@ -51,11 +51,14 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Telefone)
                 </td>
-                <td>
-                    <button asp-action="Editar" asp-route-id="@item.IdFunc" type="button" class="btn btn btn-warning">Editar</button>
-                    <button asp-action="Deletar" asp-route-id="@item.IdFunc" type="button" class="btn btn btn-danger">Deletar</button>
+
+                <td>                   
+                    <a asp-action="Editar" asp-route-id="@item.IdFunc" type="button" class="btn btn btn-warning"> Editar </a>
+                    <a asp-action="Deletar" asp-route-id="@item.IdFunc" type="button" class="btn btn btn-danger"> Deletar </a>                   
                 </td>
             </tr>
+
         }
+
     </tbody>
 </table>

@@ -13,26 +13,20 @@ namespace WebInfos.View.Controllers
             odb = new InfosContext();
         }
 
-        // GET: NoticiaController
+        // Index
         public ActionResult Index()
         {
             List<TbFuncionario> oFunc = odb.TbFuncionario.ToList();
             return View(oFunc);
         }
 
-        // GET: FuncionarioController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: FuncionarioController/Create
+        // GET: Criar
         public ActionResult Criar()
         {
             return View();
         }
 
-        // POST: FuncionarioController/Create
+        // POST: Criar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Criar(TbFuncionario ooFunc)
@@ -42,34 +36,35 @@ namespace WebInfos.View.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: FuncionarioController/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Editar
+        public ActionResult Editar(int id)
         {
-            return View();
+            TbFuncionario ooFunc = odb.TbFuncionario.Find(id);
+            return View(ooFunc);
         }
 
-        // POST: FuncionarioController/Edit/5
+        // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Editar(int id, TbFuncionario ooFunc)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var oFuncBanco = odb.TbFuncionario.Find(id);
+            oFuncBanco.Nome = ooFunc.Nome;
+            oFuncBanco.Departamento = ooFunc.Departamento;
+            oFuncBanco.Email = ooFunc.Email;
+            oFuncBanco.Telefone = ooFunc.Telefone;
+            odb.Entry(oFuncBanco).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            odb.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // GET: FuncionarioController/Delete/5
+        // GET: Deletar
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: FuncionarioController/Delete/5
+        // POST: Deletar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
