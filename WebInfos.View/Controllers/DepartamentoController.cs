@@ -25,7 +25,7 @@ namespace WebInfos.View.Controllers
         }
 
         // GET: DepartamentoController/Create
-        public ActionResult Create()
+        public ActionResult Criar()
         {
             return View();
         }
@@ -33,7 +33,7 @@ namespace WebInfos.View.Controllers
         // POST: DepartamentoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Criar(IFormCollection collection)
         {
             try
             {

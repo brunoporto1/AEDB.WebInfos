@@ -4,12 +4,13 @@
     ViewData["Title"] = "Departamento";
 }
 
-<h1>View</h1>
-
+<h1 class="text-center"> Departamentos </h1>
+<hr/>
 <p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+    <a type="button" class="btn btn-primary btn-sm" asp-action="Criar">Registrar</a>
+</p> 
+
+<table class="table table-bordered text-center table-striped">
     <thead>
         <tr>
             <th>
@@ -22,20 +23,46 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+        @foreach (var item in Model)
+        {
+            <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.IdDep)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Departamento)
                 </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdDep">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdDep">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdDep">Delete</a>
-            </td>
-        </tr>
-}
+                <td>                   
+                    <a asp-action="Editar" asp-route-id="@item.IdDep" type="button" class="btn btn btn-warning"> Editar </a>
+                    <a asp-action="Deletar" asp-route-id="@item.IdDep" type="button" class="btn btn btn-danger"> Deletar </a>                   
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<hr />
+
+<div class="row">
+    <div class="col-lg-4">
+        <img class="rounded-circle" src="~/imagem/rh.png" width="140" height="140">
+        <h3>Recursos Humanos</h3>
+        <p>RH é o setor matriz de uma organização. Isso porque, a área é responsável pelo capital humanal da empresa, assumindo atividades de recrutamento, seleção, treinamento, gerenciamento da marca empregadora e a cultura organizacional.</p>
+    </div>
+
+    <div class="col-lg-4">
+
+        <img class="rounded-circle" src="~/imagem/ti.png" width="140" height="140">
+        <h3>Tecnologia da informação</h3>
+        <p>conjunto de todas as atividades e soluções providas por recursos de computação que visam a produção, o armazenamento, a transmissão, o acesso, a segurança e o uso das informações.</p>
+    </div>
+
+    <div class="col-lg-4">
+        <img class="rounded-circle" src="~/imagem/adm.png" width="140" height="140">
+        <h3>Administração</h3>
+        <p>A Administração ou Gestão é a ciência social que estuda e sistematiza as práticas usadas para administrar. O termo "administração" significa direção, gerência.</p>
+        @*<p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>*@
+    </div>
+</div>
+
+
