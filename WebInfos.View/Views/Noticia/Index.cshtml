@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebInfos.Model.TbNoticia>
+
+@{
+    ViewData["Title"] = "Notícia";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+                        <th>
+                @Html.DisplayNameFor(model => model.IdNot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noticia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                        <td>
+                @Html.DisplayFor(modelItem => item.IdNot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noticia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdNot">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdNot">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdNot">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

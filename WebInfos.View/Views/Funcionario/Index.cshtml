@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebInfos.Model.TbFuncionario>
+
+@{
+    ViewData["Title"] = "Funcionários";
+}
+
+<h1 class="text-center"> Funcionários </h1>
+
+<p>
+    <a type="button" class="btn btn-primary btn-sm" asp-action="Criar">Registrar</a>
+</p>
+<hr/>
+
+<table class="table table-bordered text-center table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdFunc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdFunc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    <button asp-action="Editar" asp-route-id="@item.IdFunc" type="button" class="btn btn btn-warning">Editar</button>
+                    <button asp-action="Deletar" asp-route-id="@item.IdFunc" type="button" class="btn btn btn-danger">Deletar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

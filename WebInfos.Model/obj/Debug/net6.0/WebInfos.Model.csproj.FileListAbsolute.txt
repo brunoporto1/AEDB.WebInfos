@@ -1,0 +1,12 @@
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\bin\Debug\net6.0\WebInfos.Model.deps.json
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\bin\Debug\net6.0\WebInfos.Model.dll
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\bin\Debug\net6.0\WebInfos.Model.pdb
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\WebInfos.Model.csproj.AssemblyReference.cache
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\WebInfos.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\WebInfos.Model.AssemblyInfoInputs.cache
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\WebInfos.Model.AssemblyInfo.cs
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\WebInfos.Model.csproj.CoreCompileInputs.cache
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\WebInfos.Model.dll
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\refint\WebInfos.Model.dll
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\WebInfos.Model.pdb
+D:\Faculdade\5º Período\Desenvolvimento de Sistemas Web com.NET\WebInfos\WebInfos.Model\obj\Debug\net6.0\ref\WebInfos.Model.dll
