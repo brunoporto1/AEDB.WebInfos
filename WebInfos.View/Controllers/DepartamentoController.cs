@@ -12,67 +12,55 @@ namespace WebInfos.View.Controllers
             odb = new InfosContext();
         }
 
-        // GET: NoticiaController
+        // GET: Controller
         public ActionResult Index()
         {
             List<TbDepartamento> oDep = odb.TbDepartamento.ToList();
             return View(oDep);
         }
-        // GET: DepartamentoController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // GET: DepartamentoController/Create
+        // GET: Criar
         public ActionResult Criar()
         {
             return View();
         }
 
-        // POST: DepartamentoController/Create
+        // POST: Criar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Criar(IFormCollection collection)
+        public ActionResult Criar(TbDepartamento oDep)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            odb.TbDepartamento.Add(oDep);
+            odb.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // GET: DepartamentoController/Edit/5
-        public ActionResult Edit(int id)
+        // GET: Editar
+        public ActionResult Editar(int id)
         {
-            return View();
+            TbDepartamento oDep = odb.TbDepartamento.Find(id);
+            return View(oDep);
         }
 
-        // POST: DepartamentoController/Edit/5
+        // POST: Editar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Editar(int id, TbDepartamento oDep)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var oDepBanco = odb.TbDepartamento.Find(id);
+            oDepBanco.Departamento = oDep.Departamento;
+            odb.Entry(oDepBanco).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            odb.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // GET: DepartamentoController/Delete/5
+        // GET: Deletar
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: DepartamentoController/Delete/5
+        // POST: Deletar
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

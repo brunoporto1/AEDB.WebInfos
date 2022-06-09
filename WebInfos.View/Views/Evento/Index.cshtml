@@ -1,18 +1,20 @@
 ﻿@model IEnumerable<WebInfos.Model.TbEvento>
 
 @{
-    ViewData["Title"] = "Evento";
+    ViewData["Title"] = "Eventos";
 }
 
-<h1>Index</h1>
+<h1 class="text-center"> Eventos </h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a type="button" class="btn btn-primary btn-sm" asp-action="Criar">Registrar</a>
 </p>
-<table class="table">
+<hr/>
+<table class="table table-bordered text-center">
+
     <thead>
         <tr>
-                        <th>
+            <th>
                 @Html.DisplayNameFor(model => model.IdEve)
             </th>
             <th>
@@ -21,21 +23,23 @@
             <th></th>
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-                        <td>
-                @Html.DisplayFor(modelItem => item.IdEve)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Evento)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdEve">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdEve">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdEve">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEve)
+                </td>
+                <td class="table-active">  
+                    @Html.DisplayFor(modelItem => item.Evento)
+                </td>
+                <td>                   
+                    <a asp-action="Editar" asp-route-id="@item.IdEve" type="button" class="btn btn btn-warning"> Editar </a>
+                    <a asp-action="Deletar" asp-route-id="@item.IdEve" type="button" class="btn btn btn-danger"> Deletar </a>                   
+                </td>
+            </tr>
+        }
     </tbody>
+
 </table>
